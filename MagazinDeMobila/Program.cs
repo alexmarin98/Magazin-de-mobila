@@ -1,4 +1,4 @@
-﻿namespace Magazin_de_mobila
+﻿namespace MagazinDeMobila
 {
     class Program
     {
