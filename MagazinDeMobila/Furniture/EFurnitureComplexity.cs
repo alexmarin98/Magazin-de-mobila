@@ -1,6 +1,6 @@
 ﻿namespace MagazinDeMobila.Furniture
 {
-    class EFurnitureComplexity
+    public enum EFurnitureComplexity
     {
     }
 }

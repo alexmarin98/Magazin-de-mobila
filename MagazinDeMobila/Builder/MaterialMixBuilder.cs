@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MagazinDeMobila.Builder
+﻿namespace MagazinDeMobila.Builder
 {
-    class MaterialMixBuilder : IMaterialBuilder
+    public class MaterialMixBuilder : IMaterialBuilder
     {
         public MaterialMix materialMix;
 
@@ -17,17 +11,17 @@ namespace MagazinDeMobila.Builder
 
         public void SetMaterialMixType(EMaterialMixType type)
         {
-            materialMix.type = type;
+            materialMix.Type = type;
         }
 
         public void SetPrice(double price)
         {
-            materialMix.setPrice(price);
+            materialMix.Price=price;
         }
 
         public void SetAmount(double amount)
         {
-            materialMix.amount = amount;
+            materialMix.Amount = amount;
         }
 
         public MaterialMix GetMaterialMix()
@@ -37,7 +31,7 @@ namespace MagazinDeMobila.Builder
 
         public double GetPrice(EMaterialMixType materialType)
         {
-            return materialMix.price;
+            return materialMix.Price;
         }
     }
 }

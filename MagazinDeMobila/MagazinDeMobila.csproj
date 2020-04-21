@@ -61,6 +61,7 @@
     <Compile Include="Furniture\FurnitureFactory\Couchfactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\DayBedFactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\DiningTableFactory.cs" />
+    <Compile Include="Furniture\FurnitureFactory\FurnitureFactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\LiftChairFactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\SofaBedFactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\TelevisionSetFactory.cs" />
@@ -79,7 +80,6 @@
     <Compile Include="Furniture\FurnitureType\LiftChair.cs" />
     <Compile Include="Furniture\FurnitureType\SofaBed.cs" />
     <Compile Include="Furniture\FurnitureType\TelevisionSet.cs" />
-    <Compile Include="Furniture\FurnitureFactory\IFurnitureFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

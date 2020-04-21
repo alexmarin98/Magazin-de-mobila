@@ -1,6 +1,0 @@
-﻿namespace MagazinDeMobila
-{
-    interface IFurnitureFactory
-    {
-    }
-}

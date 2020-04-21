@@ -9,8 +9,9 @@ namespace MagazinDeMobila
             MaterialSeller seller = new MaterialSeller(new MaterialMixBuilder(), EMaterialMixType.EGlass);
 
             MaterialMix material = seller.GetResult();
+            material.Type = EMaterialMixType.EIron;
 
-            System.Console.WriteLine(material.getPrice());
+            System.Console.WriteLine(material.Price);
         }
     }
 }
