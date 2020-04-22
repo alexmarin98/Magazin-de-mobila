@@ -30,7 +30,8 @@ namespace MagazinDeMobila.Builder
                     break;
             }
             _builder.SetMaterialMixType(materialMixType);
-            _builder.SetAmount(100);
+            _builder.SetColor("none");
+            _builder.SetAccesoryType(EAccesoryType.EBasic);
         }
 
         public MaterialMix GetResult()

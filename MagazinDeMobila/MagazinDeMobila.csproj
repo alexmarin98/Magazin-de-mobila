@@ -49,6 +49,13 @@
     <Compile Include="Builder\MaterialMix.cs" />
     <Compile Include="Builder\MaterialMixBuilder.cs" />
     <Compile Include="Builder\MaterialSeller.cs" />
+    <Compile Include="Decorator\EAccesoryType.cs" />
+    <Compile Include="Decorator\ExtendableDecorator.cs" />
+    <Compile Include="Decorator\HandleDecorator.cs" />
+    <Compile Include="Decorator\HeightAdjustedDecorator.cs" />
+    <Compile Include="Decorator\IMaterialAccesory.cs" />
+    <Compile Include="Decorator\MaterialMixDecorator.cs" />
+    <Compile Include="Decorator\UpholsteredDecorator.cs" />
     <Compile Include="FunitureSeller.cs" />
     <Compile Include="Furniture\EFurnitureComplexity.cs" />
     <Compile Include="Furniture\FurnitureFactory\BarChairFactory.cs" />

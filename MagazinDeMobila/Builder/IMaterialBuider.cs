@@ -6,7 +6,9 @@
 
         void SetPrice(double price);
 
-        void SetAmount(double amount);
+        void SetColor(string color);
+
+        void SetAccesoryType(EAccesoryType accesoryType);
 
         void SetMaterialMixType(EMaterialMixType type);
 
