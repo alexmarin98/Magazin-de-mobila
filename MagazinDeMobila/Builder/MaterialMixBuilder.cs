@@ -19,9 +19,14 @@
             materialMix.Price=price;
         }
 
-        public void SetAmount(double amount)
+        public void SetColor(string color)
         {
-            materialMix.Amount = amount;
+            materialMix.Color = color;
+        }
+
+        public void SetAccesoryType(EAccesoryType accesoryType)
+        {
+            materialMix.AccesoryType = accesoryType;
         }
 
         public MaterialMix GetMaterialMix()
