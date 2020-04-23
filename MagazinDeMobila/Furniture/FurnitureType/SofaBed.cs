@@ -9,7 +9,7 @@ namespace MagazinDeMobila.Furniture.FurnitureType
         {
             FurnitureType = EFurnitureType.ESofaBed;
         }
-        public SofaBed(int id, double price, EFurnitureComplexity furnitureComplexity, MaterialMixBuilder materialMixBuilder, EFurnitureType furnitureType) :
+        public SofaBed(int id, double price, EFurnitureComplexity furnitureComplexity, EMaterialMixType materialMixBuilder, EFurnitureType furnitureType) :
             base(id, price, furnitureComplexity, materialMixBuilder)
         {
             FurnitureType = furnitureType;

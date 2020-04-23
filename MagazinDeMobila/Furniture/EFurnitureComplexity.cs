@@ -2,5 +2,8 @@
 {
     public enum EFurnitureComplexity
     {
+        Easy,
+        Medium,
+        Hard
     }
 }

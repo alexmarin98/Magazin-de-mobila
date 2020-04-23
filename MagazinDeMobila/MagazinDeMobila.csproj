@@ -49,7 +49,6 @@
     <Compile Include="Builder\MaterialMix.cs" />
     <Compile Include="Builder\MaterialMixBuilder.cs" />
     <Compile Include="Builder\MaterialSeller.cs" />
-    <Compile Include="FunitureSeller.cs" />
     <Compile Include="Furniture\EFurnitureComplexity.cs" />
     <Compile Include="Furniture\FurnitureFactory\BarChairFactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\BedFactory.cs" />
@@ -62,6 +61,7 @@
     <Compile Include="Furniture\FurnitureFactory\DayBedFactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\DiningTableFactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\FurnitureFactory.cs" />
+    <Compile Include="Furniture\FurnitureFactory\FurnitureSeller.cs" />
     <Compile Include="Furniture\FurnitureFactory\LiftChairFactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\SofaBedFactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\TelevisionSetFactory.cs" />

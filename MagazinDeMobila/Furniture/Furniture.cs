@@ -7,13 +7,13 @@ namespace MagazinDeMobila.Furniture
         public int Id { get; set; }
         public double Price { get; set; }
         public EFurnitureComplexity FurnitureComplexity { get; set; }
-        public MaterialMixBuilder MaterialMixBuilder { get; set; }
+        public EMaterialMixType MaterialMixBuilder { get; set; }
         public abstract EFurnitureType FurnitureType { get; set; }
         public Furniture()
         {
                 
         }
-        public Furniture(int id, double price, EFurnitureComplexity furnitureComplexity, MaterialMixBuilder materialMixBuilder)
+        public Furniture(int id, double price, EFurnitureComplexity furnitureComplexity, EMaterialMixType materialMixBuilder)
         {
             Id = id;
             Price = price;
