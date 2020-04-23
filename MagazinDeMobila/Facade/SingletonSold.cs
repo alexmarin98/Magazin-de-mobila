@@ -8,27 +8,27 @@ namespace MagazinDeMobila.Facade
 {
     class SingletonSold
     {
-        public static SingletonSold instance { get; set; } = null;
+        public static SingletonSold Instance { get; set; } = null;
 
-        public Sold sold { get; set; }
+        public Sold Sold { get; set; }
 
         public static SingletonSold getInstance()
         {
-            if (instance == null)
-                instance = new SingletonSold();
-            return instance;
+            if (Instance == null)
+                Instance = new SingletonSold();
+            return Instance;
         }
         public void addMoney(double sum)
         {
-            sold.addMoney(sum);
+            Sold.AddMoney(sum);
         }
         public void removeMoney(double sum)
         {
-            sold.getMoney(sum);
+            Sold.RemoveMoney(sum);
         }
-        public double getSold()
+        public double GetSold()
         {
-            return sold.getCurrentSold();
+            return Sold.CurrentSold;
         }
 
     }

@@ -23,7 +23,7 @@ namespace MagazinDeMobila.Facade
         }
         public double getSoldMoney()
         {
-            return soldOperation.getSold();
+            return soldOperation.GetSold();
         }
         public void addProduct(String id,double sum)
         {
@@ -32,10 +32,10 @@ namespace MagazinDeMobila.Facade
         }
         public void printProductList()
         {
-            for(VMProduct p: productOperation.getProductsList())
-            {
-                Console.WriteLine(p.getName());
-            }
+            //for(VMProduct p: productOperation.getProductsList())
+            //{
+            //    Console.WriteLine(p.getName());
+            //}
         }
     }
 }

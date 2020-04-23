@@ -11,22 +11,22 @@ namespace MagazinDeMobila.Facade
         public double CurrentSold { get; set; }
         public Sold(double currentSold)
         {
-            CurrentSold += currentSold;
+           // CurrentSold += currentSold;
         }
-        public void addMoney(double sum)
+        public void AddMoney(double sum)
         {
             CurrentSold += sum;
         }
-        public void removeMoney(double sum)
+        public void RemoveMoney(double sum)
         {
             if (CurrentSold > sum)
                 CurrentSold -= sum;
             else
                 Console.WriteLine("We dont have that kind of money in our current sold");
         }
-        public double getSold()
-        {
-            return CurrentSold;
-        }
+        //public double getSold()
+        //{
+        //    return CurrentSold;
+        //}
     }
 }

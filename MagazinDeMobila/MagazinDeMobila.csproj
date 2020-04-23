@@ -55,7 +55,12 @@
     <Compile Include="Decorator\HeightAdjustedDecorator.cs" />
     <Compile Include="Decorator\IMaterialAccesory.cs" />
     <Compile Include="Decorator\MaterialMixDecorator.cs" />
-    <Compile Include="Decorator\UpholsteredDecorator.cs" />    <Compile Include="Furniture\EFurnitureComplexity.cs" />
+    <Compile Include="Decorator\UpholsteredDecorator.cs" />
+    <Compile Include="Facade\ProductOperation.cs" />
+    <Compile Include="Facade\SingletonSold.cs" />
+    <Compile Include="Facade\Sold.cs" />
+    <Compile Include="Facade\Transaction.cs" />
+    <Compile Include="Furniture\EFurnitureComplexity.cs" />
     <Compile Include="Furniture\FurnitureFactory\BarChairFactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\BedFactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\BenchFactory.cs" />
@@ -82,12 +87,20 @@
     <Compile Include="Furniture\FurnitureType\DayBed.cs" />
     <Compile Include="Furniture\FurnitureType\DiningTable.cs" />
     <Compile Include="Furniture\FurnitureType\EFurnitureType.cs" />
-    <Compile Include="Furniture\Furniture.cs" />
+    <Compile Include="Furniture\FurnitureType\Furniture1.cs" />
     <Compile Include="Furniture\FurnitureType\LiftChair.cs" />
     <Compile Include="Furniture\FurnitureType\SofaBed.cs" />
     <Compile Include="Furniture\FurnitureType\TelevisionSet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VendingMachine\EClientOption.cs" />
+    <Compile Include="VendingMachine\ESellerOption.cs" />
+    <Compile Include="VendingMachine\HasMoneyState.cs" />
+    <Compile Include="VendingMachine\HasNoMoneyState.cs" />
+    <Compile Include="VendingMachine\SoldOutState.cs" />
+    <Compile Include="VendingMachine\SoldProductState.cs" />
+    <Compile Include="VendingMachine\State.cs" />
+    <Compile Include="VendingMachine\VendingMachine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

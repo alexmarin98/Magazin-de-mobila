@@ -18,19 +18,19 @@ namespace MagazinDeMobila.Decorator
 
         public MaterialMixDecorator(IMaterialAccesory materialAccesory)
         {
-            this.DecoratedMaterial = new MaterialMix();
-            this.DecoratedMaterial.Type = materialAccesory.Type;
-            this.DecoratedMaterial.AccesoryType = materialAccesory.AccesoryType;
-            this.DecoratedMaterial.Color = materialAccesory.Color;
-            this.DecoratedMaterial.Price = materialAccesory.Price;
+            DecoratedMaterial = new MaterialMix();
+            DecoratedMaterial.Type = materialAccesory.Type;
+            DecoratedMaterial.AccesoryType = materialAccesory.AccesoryType;
+            DecoratedMaterial.Color = materialAccesory.Color;
+            DecoratedMaterial.Price = materialAccesory.Price;
         }
 
         public void Assemble(string color)
         {
-            this.Color = color;
-            this.Type = DecoratedMaterial.Type;
-            this.Price = DecoratedMaterial.Price;
-            this.AccesoryType = DecoratedMaterial.AccesoryType;
+            Color = color;
+            Type = DecoratedMaterial.Type;
+            Price = DecoratedMaterial.Price;
+            AccesoryType = DecoratedMaterial.AccesoryType;
         }
 
         public abstract void SetPrice();

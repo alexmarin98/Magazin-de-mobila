@@ -1,4 +1,4 @@
-﻿using MagazinDeMobila.Builder;
+﻿using MagazinDeMobila.Decorator;
 using System;
 using System.Collections.Generic;
 
@@ -6,17 +6,17 @@ namespace MagazinDeMobila.Furniture.FurnitureFactory
 {
     public class FurnitureSeller
     {
-        public Dictionary<int, Furniture> StoredFurniture { get; set; }
-        public Dictionary<int, Furniture> OrderedFurniture { get; set; }
+        public Dictionary<int, Furniture1> StoredFurniture { get; set; }
+        public Dictionary<int, Furniture1> OrderedFurniture { get; set; }
 
         public FurnitureSeller()
         {
-            StoredFurniture = new Dictionary<int, Furniture>();
-            OrderedFurniture = new Dictionary<int, Furniture>();
+            StoredFurniture = new Dictionary<int, Furniture1>();
+            OrderedFurniture = new Dictionary<int, Furniture1>();
         }
-        public int OrderFurniture(double price, EFurnitureComplexity furnitureComplexity, EMaterialMixType materialMixBuilder, EFurnitureType furnitureType)
+        public int OrderFurniture(double price, EFurnitureComplexity furnitureComplexity, IMaterialAccesory materialMixBuilder, EFurnitureType furnitureType)
         {
-            Furniture furniture;
+            Furniture1 furniture;
             FurnitureFactory furnitureFactory;
             switch (furnitureType)
             {
