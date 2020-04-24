@@ -14,7 +14,7 @@ namespace MagazinDeMobila.Furniture.FurnitureFactory
             StoredFurniture = new Dictionary<int, Furniture1>();
             OrderedFurniture = new Dictionary<int, Furniture1>();
         }
-        public int OrderFurniture(double price, EFurnitureComplexity furnitureComplexity, IMaterialAccesory materialMixBuilder, EFurnitureType furnitureType)
+        public int OrderFurniture(double price, string name, EFurnitureComplexity furnitureComplexity, IMaterialAccesory materialMixBuilder, EFurnitureType furnitureType)
         {
             Furniture1 furniture;
             FurnitureFactory furnitureFactory;
@@ -91,7 +91,7 @@ namespace MagazinDeMobila.Furniture.FurnitureFactory
                         return 0;
                     }
             }
-            furniture = furnitureFactory.GetFurniture(price, furnitureComplexity, materialMixBuilder, furnitureType);
+            furniture = furnitureFactory.GetFurniture(price,name, furnitureComplexity, materialMixBuilder, furnitureType);
             OrderedFurniture.Add(furniture.Id, furniture);
             return furniture.Id;
         }
@@ -107,6 +107,18 @@ namespace MagazinDeMobila.Furniture.FurnitureFactory
                 Console.WriteLine("This product is not avaible in store right now");
             }
         }
+
+        public double ExistProduct(string productName)
+        {
+            foreach (var product in OrderedFurniture)
+            {
+                if (product.Value.Name == productName)
+                    return product.Value.Price;
+                
+            }
+            return -1;
+        }
+
 
         public void ShowAvaibleProduct()
         {

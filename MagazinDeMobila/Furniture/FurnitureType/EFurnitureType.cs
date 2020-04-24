@@ -2,6 +2,7 @@
 {
     public enum EFurnitureType
     {
+        ENone,
         EChair,
         ELiftChair,
         EBarChair,
