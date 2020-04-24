@@ -60,6 +60,16 @@
     <Compile Include="Facade\SingletonSold.cs" />
     <Compile Include="Facade\Sold.cs" />
     <Compile Include="Facade\Transaction.cs" />
+    <Compile Include="Flyweight\CardMoney.cs" />
+    <Compile Include="Flyweight\Cashier.cs" />
+    <Compile Include="Flyweight\CashRegister.cs" />
+    <Compile Include="Flyweight\CashRegisterCard.cs" />
+    <Compile Include="Flyweight\CashRegisterCoin.cs" />
+    <Compile Include="Flyweight\CashRegisterPaper.cs" />
+    <Compile Include="Flyweight\CoinMoney.cs" />
+    <Compile Include="Flyweight\EMoneyType.cs" />
+    <Compile Include="Flyweight\Money.cs" />
+    <Compile Include="Flyweight\PaperMoney.cs" />
     <Compile Include="Furniture\EFurnitureComplexity.cs" />
     <Compile Include="Furniture\FurnitureFactory\BarChairFactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\BedFactory.cs" />
@@ -93,14 +103,14 @@
     <Compile Include="Furniture\FurnitureType\TelevisionSet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VendingMachine\EClientOption.cs" />
-    <Compile Include="VendingMachine\ESellerOption.cs" />
-    <Compile Include="VendingMachine\HasMoneyState.cs" />
-    <Compile Include="VendingMachine\HasNoMoneyState.cs" />
-    <Compile Include="VendingMachine\SoldOutState.cs" />
-    <Compile Include="VendingMachine\SoldProductState.cs" />
-    <Compile Include="VendingMachine\State.cs" />
-    <Compile Include="VendingMachine\VendingMachine.cs" />
+    <Compile Include="State\EClientOption.cs" />
+    <Compile Include="State\ESellerOption.cs" />
+    <Compile Include="State\HasMoneyState.cs" />
+    <Compile Include="State\HasNoMoneyState.cs" />
+    <Compile Include="State\SoldOutState.cs" />
+    <Compile Include="State\SoldProductState.cs" />
+    <Compile Include="State\State.cs" />
+    <Compile Include="State\VendingMachine1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -5,7 +5,7 @@ namespace MagazinDeMobila.Facade
 {
     class ProductOperation
     {
-        public List<Furniture.Furniture1> productList { get; set; }
+        public List<Furniture1> productList { get; set; }
         public void addProduct(String prodId, double sum)
         {
             //int id = 0;
