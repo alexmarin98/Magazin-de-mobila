@@ -9,8 +9,8 @@ namespace MagazinDeMobila.Furniture.FurnitureType
         {
             FurnitureType = EFurnitureType.EBarChair;
         }
-        public BarChair(int id, double price, EFurnitureComplexity furnitureComplexity, IMaterialAccesory materialMixBuilder, EFurnitureType furnitureType) :
-            base(id, price, furnitureComplexity, materialMixBuilder)
+        public BarChair(int id, double price, string name, EFurnitureComplexity furnitureComplexity, IMaterialAccesory materialMixBuilder, EFurnitureType furnitureType) :
+            base(id, price,name, furnitureComplexity, materialMixBuilder)
         {
             FurnitureType = furnitureType;
         }

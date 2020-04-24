@@ -6,6 +6,7 @@ namespace MagazinDeMobila.Furniture
     public abstract class Furniture1
     {
         public int Id { get; set; }
+        public string Name { get; set; }
         public double Price { get; set; }
         public EFurnitureComplexity FurnitureComplexity { get; set; }
         public IMaterialAccesory MaterialAccesory { get; set; }
@@ -14,16 +15,18 @@ namespace MagazinDeMobila.Furniture
         {
                 
         }
-        public Furniture1(int id, double price, EFurnitureComplexity furnitureComplexity, IMaterialAccesory materialAccesory)
+        public Furniture1(int id,  double price, string name, EFurnitureComplexity furnitureComplexity, IMaterialAccesory materialAccesory)
         {
             Id = id;
+            Name = name;
             Price = price;
             FurnitureComplexity = furnitureComplexity;
             MaterialAccesory = materialAccesory;
         }
         public override string ToString()
         {
-            return ("Id:" + Id + "Price:" + Price +
+            return ("Id:" + Id +
+                "Name:"+Name  + "Price" + Price +
                     "   Type:" + FurnitureType +
                     "   Complexity:" + FurnitureComplexity +
                     "   Color:" + MaterialAccesory.Color +

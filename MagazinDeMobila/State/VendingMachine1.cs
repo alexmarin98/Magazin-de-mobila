@@ -80,7 +80,6 @@ namespace MagazinDeMobila.VendingMachine
         private bool BuyProduct(int productId,EMoneyType moneyType)
         {
             return MachineState.BuyProduct(productId,moneyType);
-            //return MachineState.Dispense();
         }
 
         public void SetMachineState(State state)
@@ -92,10 +91,6 @@ namespace MagazinDeMobila.VendingMachine
             if (Capacity == 0)
                 return true;
             return false;
-        }
-        public int SellProduct()
-        {
-            return Capacity--;
         }
         public void SeeMoneyAmmount()
         {

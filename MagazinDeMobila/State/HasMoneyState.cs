@@ -10,13 +10,11 @@ namespace MagazinDeMobila.VendingMachine
             Console.WriteLine("Choose Buy Product menu and then pick a product from our offer");
             Machine.SetMachineState(new SoldProductState());
             return true;
-
         }
 
 
         public override bool InsertMoney(double value, EMoneyType moneyType)
         {
-            //Machine.MoneyAmount += value;
             Machine.Cashier.CashIn(value, moneyType);
             Console.WriteLine($"You just added {value} to your account");
             Machine.SeeMoneyAmmount();
@@ -26,14 +24,13 @@ namespace MagazinDeMobila.VendingMachine
 
         public override bool RedrawMoney(double value, EMoneyType moneyType)
         {
-            if (value > Machine.MoneyAmount)
+            if (value > Machine.Cashier.GetTotalCache())
             {
                 Console.WriteLine("You can't redraw this sum");
                 return false;
             }
             else
             {
-                //Machine.MoneyAmount -= value;
                 Machine.Cashier.CashOut(value, moneyType);
                 Console.WriteLine($"You just redrawn {value} from your account");
                 Machine.SeeMoneyAmmount();

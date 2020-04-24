@@ -6,6 +6,6 @@ namespace MagazinDeMobila.Furniture.FurnitureFactory
     public abstract class FurnitureFactory
     {
         protected static int LastId = 0;
-        public abstract Furniture1 GetFurniture(double price, EFurnitureComplexity furnitureComplexity, IMaterialAccesory materialMixBuilder, EFurnitureType furnitureType);
+        public abstract Furniture1 GetFurniture(double price, string Name, EFurnitureComplexity furnitureComplexity, IMaterialAccesory materialMixBuilder, EFurnitureType furnitureType);
     }
 }

@@ -6,16 +6,15 @@ namespace MagazinDeMobila.VendingMachine
 {
     public class SoldProductState : State
     {
-        public override bool BuyProduct(int id,EMoneyType moneyType)
+        public override bool BuyProduct(int id, EMoneyType moneyType)
         {
             Furniture1 furniture;
             if (Machine.FurnitureSeller.OrderedFurniture.ContainsKey(id))
             {
                 furniture = Machine.FurnitureSeller.OrderedFurniture[id];
-                if (/*Machine.MoneyAmount >= furniture.MaterialAccesory.Price*/Machine.Cashier.GetTotalCache()> furniture.MaterialAccesory.Price)
+                if (Machine.Cashier.GetTotalCache() > furniture.MaterialAccesory.Price)
                 {
                     Machine.FurnitureSeller.SellFurniture(id);
-                   // Machine.MoneyAmount -= furniture.MaterialAccesory.Price;
                     Machine.Cashier.CashOut(furniture.MaterialAccesory.Price, moneyType);
                     Console.WriteLine("The product will be delivered soon");
                     Machine.SeeMoneyAmmount();
@@ -30,7 +29,7 @@ namespace MagazinDeMobila.VendingMachine
             {
                 Console.WriteLine("This product is not avaible in our stock");
             }
-            if(Machine.MoneyAmount <= 0)
+            if (Machine.MoneyAmount <= 0)
             {
                 Machine.SetMachineState(new HasNoMoneyState());
             }
@@ -42,24 +41,22 @@ namespace MagazinDeMobila.VendingMachine
         }
 
 
-        public override bool InsertMoney(double value,EMoneyType moneyType)
+        public override bool InsertMoney(double value, EMoneyType moneyType)
         {
-            Machine.MoneyAmount += value;
+            Machine.Cashier.CashIn(value, moneyType);
             Console.WriteLine($"You just added {value} to your account");
             Machine.SeeMoneyAmmount();
-            //Machine.SetMachineState(new HasMoneyState());
             return true;
         }
 
         public override bool RedrawMoney(double value, EMoneyType moneyType)
         {
-            if (value > Machine.MoneyAmount)
+            if (value > Machine.Cashier.GetTotalCache())
             {
                 Console.WriteLine("You can't redraw this sum");
             }
             else
             {
-                //Machine.MoneyAmount -= value;
                 Machine.Cashier.CashOut(value, moneyType);
                 Console.WriteLine($"You just redrawn {value} from your account");
                 Machine.SeeMoneyAmmount();

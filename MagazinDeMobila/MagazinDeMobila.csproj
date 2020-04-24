@@ -49,6 +49,11 @@
     <Compile Include="Builder\MaterialMix.cs" />
     <Compile Include="Builder\MaterialMixBuilder.cs" />
     <Compile Include="Builder\MaterialSeller.cs" />
+    <Compile Include="COR\Importator.cs" />
+    <Compile Include="COR\Local.cs" />
+    <Compile Include="COR\Owner.cs" />
+    <Compile Include="COR\RequestPrice.cs" />
+    <Compile Include="COR\Seller.cs" />
     <Compile Include="Decorator\EAccesoryType.cs" />
     <Compile Include="Decorator\ExtendableDecorator.cs" />
     <Compile Include="Decorator\HandleDecorator.cs" />

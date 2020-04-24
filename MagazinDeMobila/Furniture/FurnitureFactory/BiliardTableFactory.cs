@@ -6,7 +6,7 @@ namespace MagazinDeMobila.Furniture.FurnitureFactory
 {
     public class BiliardTableFactory : FurnitureFactory
     {
-        public override Furniture1 GetFurniture(double price, EFurnitureComplexity furnitureComplexity, IMaterialAccesory materialMixBuilder, EFurnitureType furnitureType)
-            => new BiliardTable(LastId++, price, furnitureComplexity, materialMixBuilder, EFurnitureType.EBarChair);
+        public override Furniture1 GetFurniture(double price,string name, EFurnitureComplexity furnitureComplexity, IMaterialAccesory materialMixBuilder, EFurnitureType furnitureType)
+            => new BiliardTable(LastId++, price, name, furnitureComplexity, materialMixBuilder, EFurnitureType.EBarChair);
     }
 }
