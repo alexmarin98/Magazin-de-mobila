@@ -1,5 +1,6 @@
 ﻿using MagazinDeMobila.Builder;
 using MagazinDeMobila.Decorator;
+using MagazinDeMobila.Flyweight;
 using MagazinDeMobila.Furniture;
 using MagazinDeMobila.Furniture.FurnitureFactory;
 using MagazinDeMobila.VendingMachine;
@@ -43,7 +44,7 @@ namespace MagazinDeMobila
         }
         public static void ClientMenu(FurnitureSeller furnitureSeller)
         {
-            var vendingMachine = new VendingMachine1(furnitureSeller);
+            var vendingMachine = new VendingMachine1(furnitureSeller,new Cashier());
             State.Machine = vendingMachine;
             Console.WriteLine("1.InsertMoney");
             Console.WriteLine("2.RedrawMoney");
@@ -69,23 +70,23 @@ namespace MagazinDeMobila
                     case 1:
                         Console.WriteLine("How much do you want to add to your account!");
                         value = Convert.ToInt32(Console.ReadLine());
-                        vendingMachine.UpdateState(EClientOption.InsertMoney, value, int.MaxValue);
+                        vendingMachine.UpdateState(EClientOption.InsertMoney, value, int.MaxValue,EMoneyType.Card);
                         break;
                     case 2:
                         Console.WriteLine("How much do you want to redraw?");
                         value = Convert.ToInt32(Console.ReadLine());
-                        vendingMachine.UpdateState(EClientOption.RetractMoney, value, int.MaxValue);
+                        vendingMachine.UpdateState(EClientOption.RetractMoney, value, int.MaxValue, EMoneyType.Card);
                         break;
                     case 3:
                         Console.WriteLine("Choose your product Id");
                         value = Convert.ToInt32(Console.ReadLine());
-                        vendingMachine.UpdateState(EClientOption.BuyProduct,value,value);
+                        vendingMachine.UpdateState(EClientOption.BuyProduct,value,value, EMoneyType.Card);
                         break;
                     case 4:
-                        vendingMachine.UpdateState(EClientOption.InspectStock,value,value);
+                        vendingMachine.UpdateState(EClientOption.InspectStock,value,value, EMoneyType.Card);
                         break;
                     case 5:
-                        vendingMachine.UpdateState(EClientOption.SeeMoneyAmmount, value, value);
+                        vendingMachine.UpdateState(EClientOption.SeeMoneyAmmount, value, value, EMoneyType.Card);
                         break;
                     case 6:
                         break;

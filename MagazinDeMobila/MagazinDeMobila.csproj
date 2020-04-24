@@ -64,12 +64,8 @@
     <Compile Include="Flyweight\Cashier.cs" />
     <Compile Include="Flyweight\CashRegister.cs" />
     <Compile Include="Flyweight\CashRegisterCard.cs" />
-    <Compile Include="Flyweight\CashRegisterCoin.cs" />
-    <Compile Include="Flyweight\CashRegisterPaper.cs" />
-    <Compile Include="Flyweight\CoinMoney.cs" />
     <Compile Include="Flyweight\EMoneyType.cs" />
     <Compile Include="Flyweight\Money.cs" />
-    <Compile Include="Flyweight\PaperMoney.cs" />
     <Compile Include="Furniture\EFurnitureComplexity.cs" />
     <Compile Include="Furniture\FurnitureFactory\BarChairFactory.cs" />
     <Compile Include="Furniture\FurnitureFactory\BedFactory.cs" />
