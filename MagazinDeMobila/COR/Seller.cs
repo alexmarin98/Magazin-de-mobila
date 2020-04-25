@@ -4,13 +4,10 @@ namespace MagazinDeMobila.COR
 {
     public class Seller : Owner
     {
-
         FurnitureSeller StoreProduct { get; set; }
-
-
         public Seller(FurnitureSeller storeProduct)
         {
-            this.StoreProduct = storeProduct;
+            StoreProduct = storeProduct;
         }
 
 
@@ -22,10 +19,9 @@ namespace MagazinDeMobila.COR
             {
                 return price;
             }
-            if (this.succesor != null)
+            if (succesor != null)
                 return succesor.GetProductPrise(productName);
             return -1;
         }
-
     }
 }

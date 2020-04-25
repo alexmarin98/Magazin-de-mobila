@@ -1,41 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MagazinDeMobila.Facade
 {
-    class Transaction
+    public class Transaction
     {
-        public SingletonSold soldOperation { get; set; }
-        public ProductOperation productOperation { get; set; }
+        public SingletonSold SoldOperation { get; set; }
 
         public Transaction()
         {
-            soldOperation = SingletonSold.getInstance();
-            productOperation =new ProductOperation();
+            SoldOperation = SingletonSold.getInstance();
         }
-        public void soldProduct(String id,double sum)
+        public void SoldProduct(double sum)
         {
-            productOperation.removeProduct(id);
-            soldOperation.addMoney(sum);
+            SoldOperation.AddMoney(sum);
         }
-        public double getSoldMoney()
+        public void GetSoldMoney()
         {
-            return soldOperation.GetSold();
+            Console.WriteLine($"You have { SoldOperation.GetSold()} in your account");
         }
-        public void addProduct(String id,double sum)
+        public void RedrawMoney(double sum)
         {
-            productOperation.addProduct(id, sum);
-            soldOperation.removeMoney(sum);
-        }
-        public void printProductList()
-        {
-            //for(VMProduct p: productOperation.getProductsList())
-            //{
-            //    Console.WriteLine(p.getName());
-            //}
+            SoldOperation.RemoveMoney(sum);
         }
     }
 }

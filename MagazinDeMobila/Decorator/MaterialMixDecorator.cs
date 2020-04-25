@@ -1,9 +1,4 @@
 ﻿using MagazinDeMobila.Builder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MagazinDeMobila.Decorator
 {
@@ -13,7 +8,6 @@ namespace MagazinDeMobila.Decorator
         public EMaterialMixType Type { get; set; }
         public EAccesoryType AccesoryType { get; set; }
         public string Color { get; set; }
-        //  public double Amount { get; set; }
         public double Price { get; set; }
 
         public MaterialMixDecorator(IMaterialAccesory materialAccesory)
@@ -21,7 +15,7 @@ namespace MagazinDeMobila.Decorator
             DecoratedMaterial = new MaterialMix();
             DecoratedMaterial.Type = materialAccesory.Type;
             DecoratedMaterial.AccesoryType = materialAccesory.AccesoryType;
-            DecoratedMaterial.Color = materialAccesory.Color;
+            DecoratedMaterial.Color = "black";
             DecoratedMaterial.Price = materialAccesory.Price;
         }
 
@@ -37,4 +31,3 @@ namespace MagazinDeMobila.Decorator
 
     }
 }
-

@@ -1,5 +1,6 @@
 ﻿using MagazinDeMobila.Builder;
 using MagazinDeMobila.Decorator;
+using MagazinDeMobila.Facade;
 using MagazinDeMobila.Flyweight;
 using MagazinDeMobila.Furniture;
 using MagazinDeMobila.Furniture.FurnitureFactory;
@@ -84,13 +85,97 @@ namespace MagazinDeMobila
         {
 
             FurnitureSeller furnitureSeller = new FurnitureSeller();
-            var p1 = furnitureSeller.OrderFurniture(3001, "chair", EFurnitureComplexity.Easy, new MaterialMix(), EFurnitureType.EBench);
-            var p2 = furnitureSeller.OrderFurniture(3000,"barChair", EFurnitureComplexity.Easy, new MaterialMix(), EFurnitureType.EBench);
-            var p3 = furnitureSeller.OrderFurniture(3000,"sofaBed", EFurnitureComplexity.Easy, new MaterialMix(), EFurnitureType.EBench);
-
-
+            var p1 = furnitureSeller.OrderFurniture(3001, "chair", EFurnitureComplexity.Easy, new MaterialMix(), EFurnitureType.EChair);
+            var p2 = furnitureSeller.OrderFurniture(3000, "barChair", EFurnitureComplexity.Medium, new MaterialMix(), EFurnitureType.EBarChair);
+            var p3 = furnitureSeller.OrderFurniture(3000, "sofaBed", EFurnitureComplexity.Easy, new MaterialMix(), EFurnitureType.ESofaBed);
             var vendingMachine = new VendingMachine1(furnitureSeller, new Cashier());
+            Transaction transaction = new Transaction();
             State.Machine = vendingMachine;
+            int option = -1;
+            while (option != 0)
+            {
+                Console.WriteLine("0. Exit");
+                Console.WriteLine("1. Client");
+                Console.WriteLine("2. Seller");
+                try
+                {
+                    option = Convert.ToInt32(Console.ReadLine());
+                    if (option < 1 || option > 2)
+                    {
+                        option = 0;
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Choose a correct input");
+                }
+                switch (option)
+                {
+                    case 1:
+                        {
+                            ClientMenu(furnitureSeller, vendingMachine);
+                            break;
+                        }
+                    case 2:
+                        {
+                            SellerMenu(transaction);
+                            break;
+                        }
+                    default: break;
+                }
+            }
+
+        }
+
+        private static void SellerMenu(Transaction transaction)
+        {
+            int option = -1;
+            while (option != 0)
+            {
+                Console.WriteLine("0. Exit");
+                Console.WriteLine("1. Redraw Money");
+                Console.WriteLine("2. See your money");
+                try
+                {
+                    option = Convert.ToInt32(Console.ReadLine());
+                    if (option < 1 || option > 2)
+                    {
+                        option = 0;
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Choose a number between 1 and 3!");
+                }
+                switch (option)
+                {
+                    case 1:
+                        {
+                            var sum = 0;
+                            Console.WriteLine("What sum do you want to redraw?");
+                            try
+                            {
+                                sum = Convert.ToInt32(Console.ReadLine());
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("Choose a valid number");
+                            }
+                            transaction.RedrawMoney(sum);
+                            break;
+                        }
+                    case 2:
+                        {
+                            transaction.GetSoldMoney();
+                            break;
+                        }
+                    default:
+                        break;
+                }
+            }
+        }
+        private static void ClientMenu(FurnitureSeller furnitureSeller, VendingMachine1 vendingMachine)
+        {
             int option = -1;
             while (option != 0)
             {
@@ -120,8 +205,6 @@ namespace MagazinDeMobila
                         EMaterialMixType materialMixType = GetMaterialType();
                         MaterialSeller createSeller = new MaterialSeller(new MaterialMixBuilder(), materialMixType);
                         MaterialMix createdMaterial = createSeller.GetResult();
-
-
                         string name;
                         EFurnitureType furnitureType;
                         do
@@ -139,9 +222,7 @@ namespace MagazinDeMobila
                         materialMixType = GetMaterialType();
                         createSeller = new MaterialSeller(new MaterialMixBuilder(), materialMixType);
                         createdMaterial = createSeller.GetResult();
-
                         IMaterialAccesory materialAccesory = createdMaterial;
-
 
                         Console.WriteLine("1. Extendable");
                         Console.WriteLine("2. Handle");
@@ -160,7 +241,7 @@ namespace MagazinDeMobila
                                     op = 0;
                                 }
                             }
-                            catch (Exception e)
+                            catch (Exception)
                             {
                                 Console.WriteLine("Choose a number between 1 and 4!");
                             }

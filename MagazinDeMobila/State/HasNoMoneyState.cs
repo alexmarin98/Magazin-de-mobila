@@ -14,7 +14,6 @@ namespace MagazinDeMobila.VendingMachine
 
         public override bool InsertMoney(double value, EMoneyType moneyType)
         {
-           // Machine.MoneyAmount += value;
             Machine.Cashier.CashIn(value, moneyType);
             Console.WriteLine($"You just added {value} to your account");
             Machine.SetMachineState(new SoldProductState());

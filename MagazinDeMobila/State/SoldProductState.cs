@@ -12,10 +12,11 @@ namespace MagazinDeMobila.VendingMachine
             if (Machine.FurnitureSeller.OrderedFurniture.ContainsKey(id))
             {
                 furniture = Machine.FurnitureSeller.OrderedFurniture[id];
-                if (Machine.Cashier.GetTotalCache() > furniture.MaterialAccesory.Price)
+                if (Machine.Cashier.GetTotalCache() > furniture.Price)
                 {
                     Machine.FurnitureSeller.SellFurniture(id);
-                    Machine.Cashier.CashOut(furniture.MaterialAccesory.Price, moneyType);
+                    Machine.Cashier.CashOut(furniture.Price, moneyType);
+                    Machine.Transaction.SoldProduct(furniture.Price);
                     Console.WriteLine("The product will be delivered soon");
                     Machine.SeeMoneyAmmount();
                 }

@@ -12,7 +12,6 @@ namespace MagazinDeMobila.Builder
 
         public MaterialMix()
         {
-
             AccesoryType = EAccesoryType.EBasic;
             SetPrice();
         }

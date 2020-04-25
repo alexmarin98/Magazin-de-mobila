@@ -4,12 +4,12 @@
     {
         public HandleDecorator(IMaterialAccesory myMaterial) : base(myMaterial)
         {
-            this.DecoratedMaterial.AccesoryType = Builder.EAccesoryType.EHandle;
+            DecoratedMaterial.AccesoryType = Builder.EAccesoryType.EHandle;
             SetPrice();
         }
         public override sealed void SetPrice()
         {
-            this.DecoratedMaterial.Price += 1100;
+            DecoratedMaterial.Price += 1100;
         }
     }
 }

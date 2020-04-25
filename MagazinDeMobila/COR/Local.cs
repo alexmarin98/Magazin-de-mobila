@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MagazinDeMobila.COR
 {
@@ -14,7 +11,7 @@ namespace MagazinDeMobila.COR
         public Local()
         {
             this.ProductPrice = new Dictionary<String, Double>();
-            addProductPrice();
+            AddProductPrice();
         }
 
 
@@ -27,7 +24,7 @@ namespace MagazinDeMobila.COR
             return -1;
         }
 
-        private void addProductPrice()
+        private void AddProductPrice()
         {
             ProductPrice.Add("desk", 230.0);
             ProductPrice.Add("window", 316.0);

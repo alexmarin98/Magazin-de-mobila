@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MagazinDeMobila.Facade
 {
-    class Sold
+    public class Sold
     {
         public double CurrentSold { get; set; }
-        public Sold(double currentSold)
+        public Sold()
         {
-           // CurrentSold += currentSold;
         }
         public void AddMoney(double sum)
         {
@@ -24,9 +19,5 @@ namespace MagazinDeMobila.Facade
             else
                 Console.WriteLine("We dont have that kind of money in our current sold");
         }
-        //public double getSold()
-        //{
-        //    return CurrentSold;
-        //}
     }
 }

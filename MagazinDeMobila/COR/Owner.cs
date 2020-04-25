@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MagazinDeMobila.COR
 {
@@ -12,10 +8,9 @@ namespace MagazinDeMobila.COR
 
         public abstract double GetProductPrise(String productName);
 
-        public void setSuccesor(Owner succesor)
+        public void SetSuccesor(Owner succesor)
         {
             this.succesor = succesor;
         }
-
     }
 }

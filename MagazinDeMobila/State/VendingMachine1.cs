@@ -1,4 +1,5 @@
-﻿using MagazinDeMobila.Flyweight;
+﻿using MagazinDeMobila.Facade;
+using MagazinDeMobila.Flyweight;
 using MagazinDeMobila.Furniture.FurnitureFactory;
 using System;
 
@@ -10,6 +11,7 @@ namespace MagazinDeMobila.VendingMachine
         public double MoneyAmount { get; set; }
         public FurnitureSeller FurnitureSeller { get; set; }
         public Cashier Cashier { get; set; }
+        public Transaction Transaction { get; set; }
         private State MachineState { get; set; }
         public HasMoneyState HasMoneyState {get;set;}
         public HasNoMoneyState HasNoMoneyState { get; set; }
@@ -21,11 +23,12 @@ namespace MagazinDeMobila.VendingMachine
             FurnitureSeller = furnitureSeller;
             Cashier = cashier;
             Capacity = furnitureSeller.OrderedFurniture.Count;
-            MachineState = new HasMoneyState();
+            SetMachineState(new HasNoMoneyState());
             HasMoneyState = new HasMoneyState();
             HasNoMoneyState = new HasNoMoneyState();
             SoldOutState = new SoldOutState();
             SoldProductState = new SoldProductState();
+            Transaction = new Transaction();
             
         }
         

@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MagazinDeMobila.Facade
+﻿namespace MagazinDeMobila.Facade
 {
-    class SingletonSold
+    public class SingletonSold
     {
         public static SingletonSold Instance { get; set; } = null;
 
         public Sold Sold { get; set; }
+        public SingletonSold()
+        {
+            Sold = new Sold();
+        }
 
         public static SingletonSold getInstance()
         {
@@ -18,11 +16,11 @@ namespace MagazinDeMobila.Facade
                 Instance = new SingletonSold();
             return Instance;
         }
-        public void addMoney(double sum)
+        public void AddMoney(double sum)
         {
             Sold.AddMoney(sum);
         }
-        public void removeMoney(double sum)
+        public void RemoveMoney(double sum)
         {
             Sold.RemoveMoney(sum);
         }

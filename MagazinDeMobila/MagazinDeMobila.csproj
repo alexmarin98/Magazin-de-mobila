@@ -61,7 +61,6 @@
     <Compile Include="Decorator\IMaterialAccesory.cs" />
     <Compile Include="Decorator\MaterialMixDecorator.cs" />
     <Compile Include="Decorator\UpholsteredDecorator.cs" />
-    <Compile Include="Facade\ProductOperation.cs" />
     <Compile Include="Facade\SingletonSold.cs" />
     <Compile Include="Facade\Sold.cs" />
     <Compile Include="Facade\Transaction.cs" />

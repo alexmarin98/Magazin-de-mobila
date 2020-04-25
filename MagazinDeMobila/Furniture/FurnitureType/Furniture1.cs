@@ -25,12 +25,12 @@ namespace MagazinDeMobila.Furniture
         }
         public override string ToString()
         {
-            return ("Id:" + Id +
-                "Name:"+Name  + "Price" + Price +
-                    "   Type:" + FurnitureType +
-                    "   Complexity:" + FurnitureComplexity +
-                    "   Color:" + MaterialAccesory.Color +
-                    "   Price:" + MaterialAccesory.Price);
+            return ("Id: " + Id +
+                    "   Name: "+Name  +
+                    "   Price: " + Price +
+                    "   Type: " + FurnitureType +
+                    "   Complexity: " + FurnitureComplexity +
+                    "   Color: " + MaterialAccesory.Color );
         }
     }
 }
