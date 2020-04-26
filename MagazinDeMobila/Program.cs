@@ -1,4 +1,5 @@
 ﻿using MagazinDeMobila.Builder;
+using MagazinDeMobila.COR;
 using MagazinDeMobila.Decorator;
 using MagazinDeMobila.Facade;
 using MagazinDeMobila.Flyweight;
@@ -187,11 +188,12 @@ namespace MagazinDeMobila
                 Console.WriteLine("0. Exit");
                 Console.WriteLine("1. Create");
                 Console.WriteLine("2. Decorate");
-                Console.WriteLine("3. Buy");
-                Console.WriteLine("4. Insert Money");
-                Console.WriteLine("5. Redraw Money");
-                Console.WriteLine("6. Inspect stock");
-                Console.WriteLine("7. See your money ammount");
+                Console.WriteLine("3. Check a product");
+                Console.WriteLine("4. Buy");
+                Console.WriteLine("5. Insert Money");
+                Console.WriteLine("6. Redraw Money");
+                Console.WriteLine("7. Inspect stock");
+                Console.WriteLine("8. See your money ammount");
 
                 try
                 {
@@ -243,6 +245,27 @@ namespace MagazinDeMobila
                         createdMaterial = createSeller.GetResult();
                         IMaterialAccesory materialAccesory = createdMaterial;
 
+                        do
+                        {
+                            Console.WriteLine("Chair");
+                            Console.WriteLine("Lift chair");
+                            Console.WriteLine("Bar chair");
+                            Console.WriteLine("Bench");
+                            Console.WriteLine("Couch");
+                            Console.WriteLine("Chesterfield");
+                            Console.WriteLine("Bed");
+                            Console.WriteLine("Day bed");
+                            Console.WriteLine("Sofa bed");
+                            Console.WriteLine("Biliard table");
+                            Console.WriteLine("Television set");
+                            Console.WriteLine("Coffe table");
+                            Console.WriteLine("Dining table");
+                            Console.WriteLine();
+                            Console.WriteLine("Introduce the name of the product:");
+                            name = Console.ReadLine();
+                            furnitureType = GetFurnitureType(name);
+                        } while (furnitureType == EFurnitureType.ENone);
+
                         Console.WriteLine("1. Extendable");
                         Console.WriteLine("2. Handle");
                         Console.WriteLine("3. Height adjusted");
@@ -282,60 +305,46 @@ namespace MagazinDeMobila
                                 materialAccesory = new UpholsteredDecorator(materialAccesory);
                                 break;
                         }
+
+                        //Console.WriteLine("What color do you want?");
+                        //string color = Console.ReadLine();
+                        materialAccesory.Assemble();
                         
-                        do
-                        {
-                            Console.WriteLine("Chair");
-                            Console.WriteLine("Lift chair");
-                            Console.WriteLine("Bar chair");
-                            Console.WriteLine("Bench");
-                            Console.WriteLine("Couch");
-                            Console.WriteLine("Chesterfield");
-                            Console.WriteLine("Bed");
-                            Console.WriteLine("Day bed");
-                            Console.WriteLine("Sofa bed");
-                            Console.WriteLine("Biliard table");
-                            Console.WriteLine("Television set");
-                            Console.WriteLine("Coffe table");
-                            Console.WriteLine("Dining table");
-                            Console.WriteLine();
-                            Console.WriteLine("Introduce the name of the product:");
-                            name = Console.ReadLine();
-                            furnitureType = GetFurnitureType(name);
-                        } while (furnitureType == EFurnitureType.ENone);
 
 
-                        furnitureSeller.OrderFurniture(materialAccesory.Price, name, EFurnitureComplexity.Easy, new MaterialMix(), furnitureType);
+                        furnitureSeller.OrderFurniture(materialAccesory.Price, name, EFurnitureComplexity.Hard, new MaterialMix(), furnitureType);
                         break;
 
                     case 3:
-                        //Seller my_seller = new Seller(furnitureSeller);
-                        //RequestPrice request = new RequestPrice(my_seller);
-                        //Console.WriteLine("What product do you want?");
-                        //string product = Console.ReadLine();
-                        //double price = request.GetProductPrice(product);
-                        //if (price == -1)
-                        //    Console.Write("This product doesn't exist.");
-                        //else
-                        //    Console.WriteLine(price);
+                        Seller my_seller = new Seller(furnitureSeller);
+                        RequestPrice request = new RequestPrice(my_seller);
+                        Console.WriteLine("Introduce the name of the product you want to check:");
+                        string product = Console.ReadLine();
+                        double price = request.GetProductPrice(product);
+                        if (price == -1)
+                            Console.Write("Can't find this product.");
+                        else
+                            Console.WriteLine("We found your product.It's price is: " + price);
+                        break;
+                    case 4:
                         Console.WriteLine("Choose your product Id");
                         int value = Convert.ToInt32(Console.ReadLine());
                         vendingMachine.UpdateState(EClientOption.BuyProduct, value, value, EMoneyType.Card);
                         break;
-                    case 4:
+                    case 5:
                         Console.WriteLine("How much do you want to add to your account?");
                         value = Convert.ToInt32(Console.ReadLine());
                         vendingMachine.UpdateState(EClientOption.InsertMoney, value, int.MaxValue, EMoneyType.Card);
                         break;
-                    case 5:
+                    case 6:
                         Console.WriteLine("How much do you want to redraw?");
                         value = Convert.ToInt32(Console.ReadLine());
                         vendingMachine.UpdateState(EClientOption.RetractMoney, value, int.MaxValue, EMoneyType.Card);
                         break;
-                    case 6:
+                    case 7:
                         vendingMachine.UpdateState(EClientOption.InspectStock, double.NaN, int.MaxValue, EMoneyType.Card);
                         break;
-                    case 7:
+                    case 8:
                         vendingMachine.UpdateState(EClientOption.SeeMoneyAmmount, int.MaxValue, int.MaxValue, EMoneyType.Card);
                         break;
 

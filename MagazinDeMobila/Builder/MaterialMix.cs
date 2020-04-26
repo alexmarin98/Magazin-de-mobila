@@ -23,6 +23,12 @@ namespace MagazinDeMobila.Builder
             SetPrice();
         }
 
+        public void Assemble()
+        {
+            AccesoryType = EAccesoryType.EBasic;
+            SetPrice();
+        }
+
         public void SetPrice()
         {
             switch (AccesoryType)

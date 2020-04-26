@@ -26,6 +26,13 @@ namespace MagazinDeMobila.Decorator
             Price = DecoratedMaterial.Price;
             AccesoryType = DecoratedMaterial.AccesoryType;
         }
+        public void Assemble()
+        {
+            Type = DecoratedMaterial.Type;
+            Price = DecoratedMaterial.Price;
+            AccesoryType = DecoratedMaterial.AccesoryType;
+        }
+
 
         public abstract void SetPrice();
 

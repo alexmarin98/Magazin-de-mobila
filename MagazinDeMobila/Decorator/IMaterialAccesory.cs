@@ -10,6 +10,7 @@ namespace MagazinDeMobila.Decorator
         double Price { get; set; }
 
         void Assemble(string color);
+        void Assemble();
         void SetPrice();
 
     }
