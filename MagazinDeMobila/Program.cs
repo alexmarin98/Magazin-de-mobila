@@ -52,7 +52,7 @@ namespace MagazinDeMobila
         {
             switch (name)
             {
-                case "chair":
+                case "Chair":
                     return EFurnitureType.EChair;
                 case "Lift chair":
                     return EFurnitureType.ELiftChair;
@@ -85,9 +85,14 @@ namespace MagazinDeMobila
         {
 
             FurnitureSeller furnitureSeller = new FurnitureSeller();
-            var p1 = furnitureSeller.OrderFurniture(3001, "chair", EFurnitureComplexity.Easy, new MaterialMix(), EFurnitureType.EChair);
-            var p2 = furnitureSeller.OrderFurniture(3000, "barChair", EFurnitureComplexity.Medium, new MaterialMix(), EFurnitureType.EBarChair);
-            var p3 = furnitureSeller.OrderFurniture(3000, "sofaBed", EFurnitureComplexity.Easy, new MaterialMix(), EFurnitureType.ESofaBed);
+            var p1 = furnitureSeller.OrderFurniture(250, "Chair", EFurnitureComplexity.Medium, new MaterialMix(), EFurnitureType.EChair);
+            var p2 = furnitureSeller.OrderFurniture(200, "Bar chair", EFurnitureComplexity.Medium, new MaterialMix(), EFurnitureType.EBarChair);
+            var p3 = furnitureSeller.OrderFurniture(800, "Sofa bed", EFurnitureComplexity.Easy, new MaterialMix(), EFurnitureType.ESofaBed);
+            var p4 = furnitureSeller.OrderFurniture(700, "Bed", EFurnitureComplexity.Easy, new MaterialMix(), EFurnitureType.EBed);
+            var p5 = furnitureSeller.OrderFurniture(550, "Bench", EFurnitureComplexity.Easy, new MaterialMix(), EFurnitureType.EBench);
+            var p6 = furnitureSeller.OrderFurniture(900, "Television set", EFurnitureComplexity.Medium, new MaterialMix(), EFurnitureType.ETelevisionSet);
+            var p7 = furnitureSeller.OrderFurniture(1000, "Billiard table", EFurnitureComplexity.Hard, new MaterialMix(), EFurnitureType.EBiliardTable);
+            var p8 = furnitureSeller.OrderFurniture(1000, "Coffe table", EFurnitureComplexity.Medium, new MaterialMix(), EFurnitureType.ECoffeTable);
             var vendingMachine = new VendingMachine1(furnitureSeller, new Cashier());
             Transaction transaction = new Transaction();
             State.Machine = vendingMachine;
@@ -209,6 +214,20 @@ namespace MagazinDeMobila
                         EFurnitureType furnitureType;
                         do
                         {
+                            Console.WriteLine("Chair");
+                            Console.WriteLine("Lift chair");
+                            Console.WriteLine("Bar chair");
+                            Console.WriteLine("Bench");
+                            Console.WriteLine("Couch");
+                            Console.WriteLine("Chesterfield");
+                            Console.WriteLine("Bed");
+                            Console.WriteLine("Day bed");
+                            Console.WriteLine("Sofa bed");
+                            Console.WriteLine("Biliard table");
+                            Console.WriteLine("Television set");
+                            Console.WriteLine("Coffe table");
+                            Console.WriteLine("Dining table");
+                            Console.WriteLine();
                             Console.WriteLine("Introduce the name of the product:");
                             name = Console.ReadLine();
                             furnitureType = GetFurnitureType(name);
@@ -263,12 +282,23 @@ namespace MagazinDeMobila
                                 materialAccesory = new UpholsteredDecorator(materialAccesory);
                                 break;
                         }
-
-                        Console.WriteLine("What color do you want?");
-                        string color = Console.ReadLine();
-                        materialAccesory.Assemble(color);
+                        
                         do
                         {
+                            Console.WriteLine("Chair");
+                            Console.WriteLine("Lift chair");
+                            Console.WriteLine("Bar chair");
+                            Console.WriteLine("Bench");
+                            Console.WriteLine("Couch");
+                            Console.WriteLine("Chesterfield");
+                            Console.WriteLine("Bed");
+                            Console.WriteLine("Day bed");
+                            Console.WriteLine("Sofa bed");
+                            Console.WriteLine("Biliard table");
+                            Console.WriteLine("Television set");
+                            Console.WriteLine("Coffe table");
+                            Console.WriteLine("Dining table");
+                            Console.WriteLine();
                             Console.WriteLine("Introduce the name of the product:");
                             name = Console.ReadLine();
                             furnitureType = GetFurnitureType(name);
@@ -293,7 +323,7 @@ namespace MagazinDeMobila
                         vendingMachine.UpdateState(EClientOption.BuyProduct, value, value, EMoneyType.Card);
                         break;
                     case 4:
-                        Console.WriteLine("How much do you want to add to your account!");
+                        Console.WriteLine("How much do you want to add to your account?");
                         value = Convert.ToInt32(Console.ReadLine());
                         vendingMachine.UpdateState(EClientOption.InsertMoney, value, int.MaxValue, EMoneyType.Card);
                         break;

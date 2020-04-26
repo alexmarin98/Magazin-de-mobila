@@ -29,8 +29,7 @@ namespace MagazinDeMobila.Furniture
                     "   Name: "+Name  +
                     "   Price: " + Price +
                     "   Type: " + FurnitureType +
-                    "   Complexity: " + FurnitureComplexity +
-                    "   Color: " + MaterialAccesory.Color );
+                    "   Complexity: " + FurnitureComplexity );
         }
     }
 }
